@@ -28,16 +28,24 @@
                 </div>
             </div>
         </div>
-        <div class="container">
+        <div class="container center-align">
                 <div class="row">
                     <div class="s12 s6">
                         <h2>Conoce los lugares mas cercanos...</h2>
-                        <div id="restorant"></div>
+                        <div id="restorant" class="modal-trigger" href="#modal1" ></div>
+                            <div id="modal1" class="modal">
+                                <div class="modal-content amber-text text-darken-3" id="contenido">
+                                    <div class="modal-footer">
+                                    <a href="#!" class="modal-close waves-effect waves-green btn-flat">volver</a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
     </section> 
     <!-- Compiled and minified JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBHGfnkorPjIgGKORpFz4kQzFQAFUIDgHY&libraries=places" async defer></script>
     <script src="../js/buscador.js"></script>
