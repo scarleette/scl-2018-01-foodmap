@@ -1,3 +1,10 @@
+
+ // Or with jQuery
+
+ $(document).ready(function(){
+  $('.modal').modal();
+});
+
 let map;
 let infowindow;
 // funcion de navigator para geolocalizar a una persona
@@ -6,9 +13,9 @@ navigator.geolocation.getCurrentPosition(initMap);
 function initMap(position) {
   // ubicacion de la persona 
   const lat = position.coords.latitude;
-  console.log(lat);
+  // console.log(lat);
   const lng = position.coords.longitude
-  console.log(lng);
+  // console.log(lng);
   const ubicacionPersona = {lat, lng};
   // funcion de google para mostrar un mapa
   map = new google.maps.Map(document.getElementById('map'), {
@@ -31,25 +38,25 @@ infowindow = new google.maps.InfoWindow();
   function callback(results, status) {
     
   if (status === google.maps.places.PlacesServiceStatus.OK) {   
-    console.log(status);
+    // console.log(status);
     console.log(results);
     // recorremos array entregado por la api
     for (let i = 0; i < results.length; i++) {
       createMarker(results[i]); 
       console.log(results);
       // obtenemos valores del objeto
-      const id = results[i].id;
+      const id = results[i].place_id;
       const name = results[i].name;
       const direccion = results[i].vicinity;
       const foto = results[i].photos[0].getUrl({'maxWidth': 350, 'maxHeight': 350});
+      const fotoId = foto.id;
       const rating = results[i].rating;        
+      const referencia = `<h4>${name}</h4><p>${direccion}</p><p>${rating}</p>`;
+      // console.log(referencia);
       const restorant = document.getElementById('restorant');
-      restorant.innerHTML += `<h4>${name}</h4><p>${direccion}</p><img src ='${foto}'>`;
-      console.log(name);
-      console.log(id);
-      console.log(direccion);
-      console.log(foto);
-      console.log(rating);
+      restorant.innerHTML += `<img src ='${foto}'>`;
+      const contenido = document.getElementById('contenido');
+      contenido.innerHTML += referencia;
       }
     }
   }
