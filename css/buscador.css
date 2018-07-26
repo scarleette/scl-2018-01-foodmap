@@ -1,6 +1,6 @@
 #map {
-  height: 30%;
+  height: 50%;
 }
-html, body {
+html, body, .mapa {
   height: 100%;
 }

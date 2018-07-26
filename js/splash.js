@@ -7,3 +7,4 @@ window.onload=timeout;
     window.location="../html/buscador.html";
     return
 }
+
