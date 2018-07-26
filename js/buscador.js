@@ -41,11 +41,13 @@ function initMap(position) {
         const name = results[i].name;
         const direccion = results[i].vicinity;
         const foto = results[i].photos[0].getUrl({'maxWidth': 350, 'maxHeight': 350});
+        const rating = results[i].rating;        
         const restorant = document.getElementById('restorant');
         restorant.innerHTML += `<h4>${name}</h4><p>${direccion}</p><img src ='${foto}'>`;
-        // console.log(name);
-        // console.log(direccion);
-        // console.log(foto);
+        console.log(name);
+        console.log(direccion);
+        console.log(foto);
+        console.log(rating);
       }
     }
   }
@@ -61,7 +63,6 @@ function initMap(position) {
     google.maps.event.addListener(marker, 'click', function() {
       infowindow.setContent(place.name);
       infowindow.open(map, this);
-     
     });
   }
 };
