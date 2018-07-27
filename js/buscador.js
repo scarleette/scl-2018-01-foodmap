@@ -2,6 +2,11 @@
  $(document).ready(function(){
   $('.modal').modal();
 });
+// Or with jQuery
+
+$(document).ready(function(){
+  $('select').formSelect();
+});
 
 let map;
 let infowindow;
@@ -47,7 +52,6 @@ infowindow = new google.maps.InfoWindow();
       const name = results[i].name;
       const direccion = results[i].vicinity;
       const foto = results[i].photos[0].getUrl({'maxWidth': 350, 'maxHeight': 350});
-      const fotoId = foto.id;
       const rating = results[i].rating;        
       const referencia = `<h4>${name}</h4><p>${direccion}</p><p>${rating}</p>`;
       // console.log(referencia);
